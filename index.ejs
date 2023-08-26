@@ -1,0 +1,71 @@
+
+
+<%- include('view/partials/header.ejs') %>
+<br>
+
+<div class="px-4 py-5 my-5 text-center">
+<img class="d-block mx-auto mb-4" src="/images/download.png" alt="" width="90" height="90">
+<h1 class="display-5 fw-bold text-body-emphasis">ONLINE QR Code Generator</h1>
+    <div class="col-lg-6 mx-auto">
+      <p class="lead mb-4">Come and encode your links or any information in the qr code with the help of this
+        application. </p>
+<br>
+<br>
+        <div style="text-align: left;">
+        <form action="/submit" method="POST" class="container">
+          <label for="content" >Enter Content</label><br>
+          <input type="text" name="content" required size="90ren" id="in" >
+
+        <br>
+        <br>
+          <input type="submit" value="Submit" style="background: blue;margin: 10ren; border-radius: 5px; width: 150ren;">
+          <input type="reset" style="background-color:RGB(220, 53, 69);border-radius: 5px; width: 100ren;">
+        </form>
+      </div>
+      
+          <!-- <form action="/submit" method="POST">
+            <label for="street">Street Name:</label>
+            <input type="text" name="street" required> -->
+
+
+
+
+      <!-- <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+        <button type="button" class="btn btn-primary btn-lg px-4 gap-3 " id="Submit"
+          fdprocessedid="zxx6ub">Submit</button>
+        <button type="button" class="btn btn-outline-secondary btn-lg px-4" fdprocessedid="hj5iw"
+          id="Reset">Reset</button>
+      </div>
+      </form>
+    </div> -->
+    <br>
+    <br>
+    <div class="card container" style="width: 40rem;">
+       
+      <% if(locals.finalqr) {%>
+        <img src="/images/qr.png" class="card-img-top" id="qr-image" alt="...">
+
+        <% } else{%>
+        <img src="/images/qr dummy image.jpg" class="card-img-top" id="qr-image" alt="...">
+        <% } %>
+      <div class="card-body">
+        <h5 class="card-title">QR-code</h5>
+        <p class="card-text">You can download your qr-code by clicking download button</p>
+        <!-- <a href="#" class="btn btn-danger">Download</a> -->
+        <form action = "download" method = "post">
+            <button>Download</button>
+        <form>
+      </div>
+    </div>
+
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+<%- include('view/partials/footer.ejs') %>
+
+
+
+
+
